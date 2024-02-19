@@ -1,0 +1,75 @@
+body {
+    color: white;
+    transition: background-color 0.5s;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#container {
+    width: 40%;
+    height: 95%;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-half, .lower-half {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.upper-half > div, .lower-half > div {
+    flex: 1;
+}
+
+.upper-left {
+    background-color: #40A2E3;
+    border-top-left-radius: 30px;
+}
+
+.upper-right {
+    background-color: #FFF6E9;
+    border-top-right-radius: 30px;
+}
+
+.lower-left {
+    background-color: #BBE2EC;
+    border-bottom-left-radius: 30px;
+}
+
+.lower-right {
+    background-color: #0D9276;
+    border-bottom-right-radius: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+    #container {
+        width: 80%;
+        border-radius: 0; /* Remove border radius for mobile devices */
+    }
+    .upper-half, .lower-half {
+        flex-direction: column;
+    }
+    .upper-left, .upper-right, .lower-left, .lower-right {
+        border-radius: 0; /* Remove border radius for parts in mobile devices */
+    }
+    .upper-left {
+        border-radius: 30px 30px 0 0; /* Top left border radius for upper parts in mobile */
+    }
+    .upper-right {
+        border-radius: 0 0 0 0; /* Top right border radius for upper parts in mobile */
+    }
+    .lower-left {
+        border-radius: 0 0 0 0; /* Bottom left border radius for lower parts in mobile */
+    }
+    .lower-right {
+        border-radius: 0 0 30px 30px; /* Bottom right border radius for lower parts in mobile */
+    }
+}
