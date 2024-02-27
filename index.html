@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Website Title</title>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* Custom CSS styles */
     body {
         background-color: #ffffff; 
         font-family: 'Montserrat', sans-serif;
-        -webkit-text-size-adjust: 100%; /* Fix for older WebKit browsers */
-        text-size-adjust: 100%; /* Supported by Chrome 54+, Chrome Android 54+, Edge 79+, and other modern browsers */
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
     }
     .hamburger-menu span {
         display: block;
@@ -45,11 +45,6 @@
         z-index: 1000;
     }
 
-    /* Open Sans font for footer */
-    .open-sans {
-        font-family: 'Open Sans', sans-serif;
-    }
-
     /* Additional mobile styles */
     @media (max-width: 360px) {
         .container {
@@ -59,7 +54,7 @@
         }
 
         .overlay-text {
-            padding-top: 40%; /* Adjust this value as needed */
+            padding-top: 40%;
         }
     }
 
@@ -108,8 +103,8 @@
         </nav>
     </header>    
 
-<div>
-    <img src="images/tea-plantation.jpg" alt="Image" class="w-full">
+<div class="w-full relative">
+    <img src="images/tea-plantation.jpg" alt="Image" >
     <div class="absolute inset-0 flex items-center justify-center text-center overlay-text">
         <div class="text-white">
             <h2 class="text-base md:text-3xl font-bold">Welcome to Our Website</h2>
@@ -117,7 +112,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="bg-gray-100">
     <div class="container mx-auto p-4 md:p-8 flex flex-col md:flex-row">
@@ -131,37 +125,33 @@
     </div>
 </div>
 
-
-    <div class="container mx-auto p-4 md:p-8 flex flex-col md:flex-row">
-        <!-- Image -->
+<div class="w-full">
+    <div class="container mx-auto md:p-8 flex flex-col md:flex-row">
         <div class="w-full md:w-1/2">
             <img src="images/tea_1.jpg" alt="Your Image" class="w-full">
         </div>
-        <!-- Text Content -->
         <div class="w-full md:w-1/2 flex flex-col justify-center items-center p-4">
             <h2 class="text-lg md:text-2xl font-bold text-center">Your Title</h2>
             <p class="text-sm md:text-lg text-center">Your paragraph content goes here.</p>
         </div>
     </div>
+</div>
 
 
 <div class="bg-gray-100">
     <div class="container mx-auto p-4 md:p-8">
         <h1 class="text-lg md:text-3xl font-bold text-center mb-8">GREEN TEA PRODUCTS</h1>
         <div class="flex flex-col md:flex-row justify-between">
-            <!-- Column 1 -->
             <div class="w-full md:w-1/3 bg-gray-100 p-2 md:p-4 m-2 md:m-4 justify-center items-center">
                 <img src="images/tea_1.jpg" alt="Image 2" class="w-full mb-2 md:mb-4">
                 <h2 class="text-base md:text-lg font-bold text-center">Column 1</h2>
                 <p class="text-xs md:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <!-- Column 2 -->
             <div class="w-full md:w-1/3 bg-gray-100 p-2 md:p-4 m-2 md:m-4 justify-center items-center">
                 <img src="images/tea_1.jpg" alt="Image 2" class="w-full mb-2 md:mb-4">
                 <h2 class="text-base md:text-lg font-bold text-center">Column 2</h2>
                 <p class="text-xs md:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-            <!-- Column 3 -->
             <div class="w-full md:w-1/3 bg-gray-100 p-2 md:p-4 m-2 md:m-4 justify-center items-center">
                 <img src="images/tea_1.jpg" alt="Image 2" class="w-full mb-2 md:mb-4">
                 <h2 class="text-base md:text-lg font-bold text-center">Column 3</h2>
@@ -183,11 +173,9 @@
 <footer class="bg-green-600 w-full open-sans">
     <div class="container mx-auto p-4 md:p-8">
         <div class="flex flex-col md:flex-row justify-between">
-            <!-- Column 1 -->
             <div class="w-full md:w-1/3 flex justify-center items-center">
                 <img src="images/logo.png" alt="Logo" class="h-12 w-auto mr-2 rounded-full">
             </div>
-            <!-- Column 2 -->
             <div class="w-full md:w-1/3">
                 <h2 class="text-base md:text-lg font-bold mb-2">Social Media</h2>
                 <ul>
@@ -199,10 +187,8 @@
                         <img src="images/twitter.png" alt="Twitter" class="h-6 w-auto mr-2">
                         <a href="#">Twitter</a>
                     </li>
-                    <!-- Add more social media links as needed -->
                 </ul>
             </div>
-            <!-- Column 3 -->
             <div class="w-full md:w-1/3">
                 <h2 class="text-base md:text-lg font-bold mb-2">Contact</h2>
                 <ul>
@@ -214,7 +200,6 @@
                         <img src="images/email.png" alt="Email" class="h-6 w-auto mr-2">
                         <span>example@example.com</span>
                     </li>
-                    <!-- Add more contact information as needed -->
                 </ul>
             </div>
         </div>
