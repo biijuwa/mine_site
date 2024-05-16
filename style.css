@@ -1,25 +1,68 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  height: 100vh;
-  width: 100vw;
+  background-color: #F5EFE6;
 }
 
-/* Style for the artboard div */
+.navbar {
+  display: flex;
+  background-color: transparent;
+  padding: 10px 20px;
+  margin: 0 50px;
+  border: 1px solid #ddd;
+  height: 5vh; /* Set navbar height to 5% of viewport height */
+}
+
+.column-alpha {
+  display: flex;
+}
+
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-family: "Jersey 15", sans-serif;
+  font-size: 24px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+}
+
 .artboard {
-  background-color: #f0f0f0;
-  width: 100vw;
-  height: 100vh;
-  text-align: center;  /* Center content horizontally if you add text */
-  position: relative; /* Needed for proper positioning of the elements */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  border: 1px solid #ddd;
+  height: 85vh; /* Set artboard height to 85% of viewport height */
+  overflow: hidden;
 }
 
-/* Style for the polygon */
-.polygon {
-  width: 100%; /* Match the width of the artboard */
-  height: 100%; /* Match the height of the artboard */
-  background-color: lightyellow;
-  position: absolute; /* Position on top of the artboard div */
-  clip-path: polygon(70% 0, 100% 0, 100% 100%, 50% 100%); /* Creates a square polygon */
+.container {
+  width: 100%; /* Make container full width */
+  padding: 20px; /* Add padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+  border: 1px solid #ddd;
+  margin-top: 20px; /* Add margin on top */
+  height: 30%; /* Set container height to 30% of the artboard height */
 }
 
+.column-alpha, .column-beta {
+  width: 50%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column; /* Adjust to column layout */
+  align-items: center; /* Center content vertically and horizontally */
+  justify-content: center; /* Center content vertically */
+  height: 50%; /* Set column height to 50% of the artboard height */
+  margin-top: 20px; /* Add margin on top */
+}
+
+@media (max-width: 768px) {
+  .column-alpha, .column-beta {
+    width: 100%; /* Columns stack on smaller screens */
+  }
+}
