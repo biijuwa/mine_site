@@ -4,7 +4,7 @@ body {
   background-color: #F5EFE6;
 }
 
-.navbar {
+.navigation-bar {
   display: flex;
   background-color: transparent;
   padding: 10px 20px;
@@ -13,11 +13,7 @@ body {
   height: 5vh; /* Set navbar height to 5% of viewport height */
 }
 
-.column-alpha {
-  display: flex;
-}
-
-.navbar a {
+.navigation-bar a {
   color: #000;
   text-decoration: none;
   padding: 5px 10px;
@@ -26,11 +22,11 @@ body {
   font-size: 24px;
 }
 
-.navbar a:hover {
+.navigation-bar a:hover {
   background-color: #ddd;
 }
 
-.artboard {
+.main-content {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
@@ -39,30 +35,49 @@ body {
   overflow: hidden;
 }
 
-.container {
-  width: 100%; /* Make container full width */
-  padding: 20px; /* Add padding */
-  box-sizing: border-box; /* Include padding in width calculation */
-  border: 1px solid #ddd;
-  margin-top: 20px; /* Add margin on top */
-  height: 30%; /* Set container height to 30% of the artboard height */
-}
-
-.column-alpha, .column-beta {
-  width: 50%;
-  padding: 10px 20px;
+.content-section {
+  width: 100%;
+  /* padding: 20px; */
   box-sizing: border-box;
   border: 1px solid #ddd;
+  /* margin-top: 20px; */
+  height: 100%; /* Set container height to 100% of the artboard height */
+  display: flex; /* Enable flexbox for two columns */
+}
+
+.content-section > * {
+  flex: 1;
+}
+
+.content-section > * {
+  padding: 10px;
+  box-sizing: border-box;
   display: flex;
-  flex-direction: column; /* Adjust to column layout */
-  align-items: center; /* Center content vertically and horizontally */
-  justify-content: center; /* Center content vertically */
-  height: 50%; /* Set column height to 50% of the artboard height */
-  margin-top: 20px; /* Add margin on top */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-section > h2 {
+  margin-bottom: 10px; /* Add specific margin for headings */
+}
+
+.content-section > *:nth-child(1) { /* Target the first child element */
+  color: black; /* Adjust text color for visibility on red background */
+}
+
+.content-section > *:nth-child(2) { /* Target the second child element */
+  color: black; /* Adjust text color for visibility on blue background */
+}
+
+.time-display {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  white-space: pre-line; /* Preserve line breaks in text content */
 }
 
 @media (max-width: 768px) {
-  .column-alpha, .column-beta {
+  .content-section {
     width: 100%; /* Columns stack on smaller screens */
   }
 }
