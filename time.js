@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  function getSeasonalMessageAndGradient(month, date) {
+  function getSeasonalGradient(month, date) {
     const seasons = [
       { name: 'Spring', start: { month: 2, date: 15 }, end: { month: 4, date: 14 }, gradient: 'linear-gradient(to right, #FFB6C1, #FFC0CB)' },
       { name: 'Early summer', start: { month: 4, date: 15 }, end: { month: 6, date: 14 }, gradient: 'linear-gradient(to right, #FFFF99, #FFFF00)' },
@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         (month > season.start.month || (month === season.start.month && date >= season.start.date)) &&
         (month < season.end.month || (month === season.end.month && date <= season.end.date))
       ) {
-        return { message: `The current season is ${season.name}.`, gradient: season.gradient };
+        return season.gradient;
       }
     }
 
-    return { message: '', gradient: '' };
+    return '';
   }
 
   function updateDisplay() {
@@ -26,23 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const now = new Date();
     const offsetDate = new Date(now.getTime() + nepalOffset * 60 * 60 * 1000);
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"];
     const month = offsetDate.getMonth();
     const date = offsetDate.getDate();
 
-    let monthWord = monthNames[month];
-    if (date >= 15) {
-      monthWord = 'Mid ' + monthWord;
-    }
+    const seasonGradient = getSeasonalGradient(month, date);
 
-    const formattedNepalMonth = `Current Month in Nepal: ${monthWord}`;
-    const { message: seasonMessage, gradient: seasonGradient } = getSeasonalMessageAndGradient(month, date);
-
-    document.getElementById('month-display-nepal').textContent = `${formattedNepalMonth}\n${seasonMessage}`;
-    document.querySelector('.content-section > div:nth-child(2)').style.background = seasonGradient; // Set background gradient of the right section
+    // Update the rectangle's background gradient
+    document.getElementById('color-rectangle').style.background = seasonGradient;
   }
 
-  // Call the function to display month and season immediately on page load
+  // Call the function to display season and update rectangle color immediately on page load
   updateDisplay();
 });
