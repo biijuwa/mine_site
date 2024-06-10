@@ -61,6 +61,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-size: 150px; /* Increase the size of h2 */
+  /* color: #000; */
   margin-bottom: 10px;
 }
 
@@ -69,6 +70,7 @@ body {
   font-style: normal;
   font-display: swap;
   font-size: 24px; /* Set the size of p */
+  color: black;
 }
 
 .content-section > div:nth-child(1) {
