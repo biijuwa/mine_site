@@ -62,7 +62,7 @@ body {
 }
 
 .content-section p {
-  font-size: 24px; /* Set the size of p */
+  font-size: 18px; /* Set the size of p */
 }
 
 .content-section > div:nth-child(1) {
