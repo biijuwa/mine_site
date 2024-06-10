@@ -57,16 +57,22 @@ body {
 }
 
 .content-section h2 {
-  font-size: 72px; /* Increase the size of h2 */
+  font-family: 'Jersey 15';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 150px; /* Increase the size of h2 */
   margin-bottom: 10px;
 }
 
 .content-section p {
-  font-size: 18px; /* Set the size of p */
+  font-family: 'Raleway';
+  font-style: normal;
+  font-display: swap;
+  font-size: 24px; /* Set the size of p */
 }
 
 .content-section > div:nth-child(1) {
-  background-color: red;
+  background-color: #95D2B3;
   color: white;
 }
 
