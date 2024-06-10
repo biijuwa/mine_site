@@ -77,15 +77,30 @@ body {
   color: white;
 }
 
+/* Existing styles */
+
 #color-rectangle {
-  width: 200px;
-  height: 100px;
+  position: relative;
+  width: 600px; /* Increase the width */
+  height: 200px; /* Increase the height */
   margin-bottom: 20px;
+  border: 2px solid black; /* Add a border for visibility */
 }
 
-.time-display {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
+
+.inner-rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Divide into 6 equal parts */
+}
+
+.inner-rectangle div {
+  background-color: rgba(0, 0, 0, 0.2); /* Background color for each part */
+  border-right: 1px solid black; /* Add borders between parts */
 }
 
 .montserrat-section {

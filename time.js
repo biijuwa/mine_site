@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         (month > season.start.month || (month === season.start.month && date >= season.start.date)) &&
         (month < season.end.month || (month === season.end.month && date <= season.end.date))
       ) {
-        return season.gradient;
+        return season;
       }
     }
 
-    return '';
+    return null;
   }
 
   function updateDisplay() {
@@ -29,10 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const month = offsetDate.getMonth();
     const date = offsetDate.getDate();
 
-    const seasonGradient = getSeasonalGradient(month, date);
+    const season = getSeasonalGradient(month, date);
 
-    // Update the rectangle's background gradient
-    document.getElementById('color-rectangle').style.background = seasonGradient;
+    // Update the rectangle's background gradient and size
+    const rectangle = document.getElementById('color-rectangle');
+    rectangle.style.background = season.gradient;
+    rectangle.style.width = (month + 1) * 50 + 'px'; // Increase width based on the current month
+    rectangle.style.height = '100px'; // Fixed height
+
+    // Display the name of the current season
+    document.getElementById('season-name').textContent = season.name;
   }
 
   // Call the function to display season and update rectangle color immediately on page load
